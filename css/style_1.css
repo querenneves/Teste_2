@@ -22,20 +22,20 @@ body {
     z-index: 1002;
     visibility: visible; }
     .site-menu-toggle {
-      font-size: 7px; /* Tamanho da fonte */
-      background-color: #333; /* Cor de fundo do botão */
-      color: #fff; /* Cor do texto */
-      padding: 7px 15px; /* Espaçamento interno do botão */
-      border-radius: 5px; /* Borda arredondada */
-      border: 2px solid #000; /* Borda preta de 2 pixels */
-      display: inline-block; /* Garante que o elemento se comporte como um bloco em linha */
-      text-decoration: none; /* Remove sublinhado de links */
-      transition: background-color 0.3s, color 0.3s; /* Transição suave para cor de fundo e texto */
+      font-size: 7px; 
+      background-color: #333; 
+      color: #fff; 
+      padding: 7px 15px; 
+      border-radius: 5px; 
+      border: 2px solid #000; 
+      display: inline-block; 
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s; 
     }
     
     .site-menu-toggle:hover {
-      background-color: #555; /* Cor de fundo ao passar o mouse */
-      color: #fff; /* Cor do texto ao passar o mouse */
+      background-color: #555; 
+      color: #fff; 
     }
     
 p {
@@ -374,101 +374,112 @@ a {
       .sticky-wrapper.is-sticky .site-navbar .site-navigation .site-menu > li.active a {
         color: #fff; }
         /* CARDS - SERVIÇOS */
-        .servicos {
-					display: flex;
-					justify-content: space-between;
-					/* Espaço entre os cards */
-					gap: 20px;
-					/* Espaçamento entre os cards */
-					padding: 20px;
-				}
+.servicos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards se ajustem em várias linhas se necessário */
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
 
-				.card {
-					flex: 1;
-					/* Permite que os cards cresçam igualmente */
-					max-width: 300px;
-					/* Limite a largura máxima de cada card */
-					position: relative;
-					height: 200px;
-					background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
-					border-radius: 10px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					overflow: hidden;
-					transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-				}
+.card {
+  flex: 1;
+  min-width: 260px; /* Define um valor mínimo para que os cards não fiquem muito pequenos */
+  max-width: 300px;
+  position: relative;
+  height: auto; /* Permite que a altura se ajuste com o conteúdo */
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-				.card svg {
-					width: 48px;
-					fill: #333;
-					transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-				}
+.card img {
+  width: 100%; /* Assegura que a imagem ocupe toda a largura do card */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Assegura que a imagem cubra todo o espaço disponível */
+}
 
-				.card:hover {
-					transform: rotate(-5deg) scale(1.1);
-					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-				}
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
-				.card__content {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					width: 100%;
-					height: auto;
-					height: 100%;
-					padding: 20px;
-					box-sizing: border-box;
-					background-color: #fff;
-					opacity: 0;
-					transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-					overflow-y: auto;
-				}
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-				.card:hover .card__content {
-					transform: translate(-50%, -50%) rotate(0deg);
-					opacity: 1;
-				}
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow-y: auto;
+}
 
-				.card__title {
-					margin: 0;
-					font-size: 24px;
-					color: #333;
-					font-weight: 700;
-				}
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
 
-				.card__description {
-					margin: 10px 0 0;
-					font-size: 14px;
-					color: #777;
-					line-height: 1.4;
-				}
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
 
-				.card:hover svg {
-					scale: 0;
-					transform: rotate(-45deg);
-				}
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
 
-				@media (max-width: 768px) {
-					.card__content {
-						position: relative;
-						top: auto;
-						left: auto;
-						transform: none;
-						opacity: 1;
-						/* Torna o conteúdo sempre visível em telas menores */
-					}
-				}
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
 
-				@media (max-width: 480px) {
-					.card__title {
-						font-size: 18px;
-						/* Ajusta o tamanho do texto em telas pequenas */
-					}
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .servicos {
+      flex-direction: column; /* Empilha os cards verticalmente */
+      align-items: center;
+  }
 
-					.card__description {
-						font-size: 12px;
-						/* Ajusta o tamanho do texto em telas pequenas */
-					}
-				}
+  .card {
+      max-width: 100%; /* Permite que os cards ocupem toda a largura em telas menores */
+      margin-bottom: 20px; /* Espaçamento entre os cards */
+  }
+
+  .card__content {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .card__title {
+      font-size: 18px;
+  }
+
+  .card__description {
+      font-size: 12px;
+  }
+}
