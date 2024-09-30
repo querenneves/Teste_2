@@ -260,3 +260,56 @@ a {
       transform: translateY(0);
   }
 }
+/* pq terapia */ 
+.cards {
+  display: flex;
+  justify-content: space-around; /* Distribui os cards com mais uniformidade */
+  flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
+  gap: 20px; /* Espaço entre os cards */
+  padding: 20px; /* Adiciona espaçamento ao redor do grupo de cards */
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 150px; /* Aumentando um pouco a altura */
+  width: 250px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+  flex-basis: 30%; /* Os cards ocupam até 30% do espaço, ajustando a responsividade */
+}
+
+.cards .red {
+  background-color: #f43f5e;
+}
+
+.cards .blue {
+  background-color: #3b82f6;
+}
+
+.cards .green {
+  background-color: #22c55e;
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: 0.9em;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
