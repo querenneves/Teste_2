@@ -263,10 +263,11 @@ a {
 /* pq terapia */ 
 .cards {
   display: flex;
-  justify-content: space-around; /* Distribui os cards com mais uniformidade */
+  justify-content: space-around; /* Distribui os cards de forma uniforme */
   flex-wrap: wrap; /* Permite que os cards quebrem linha se necessário */
   gap: 20px; /* Espaço entre os cards */
   padding: 20px; /* Adiciona espaçamento ao redor do grupo de cards */
+  margin: 0 40px; /* Adiciona margem nas laterais para evitar que fique colado na borda da tela */
 }
 
 .cards .card {
@@ -275,7 +276,7 @@ a {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: 150px; /* Aumentando um pouco a altura */
+  height: 150px; /* Mantém a altura */
   width: 250px;
   border-radius: 10px;
   color: white;
@@ -283,6 +284,7 @@ a {
   transition: 400ms;
   flex-basis: 30%; /* Os cards ocupam até 30% do espaço, ajustando a responsividade */
 }
+
 
 .cards .red {
   background-color: #f43f5e;

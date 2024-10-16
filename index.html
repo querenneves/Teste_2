@@ -43,7 +43,7 @@
 			/* Espaçamento entre o ícone e o e-mail */
 		}
 
-		 .footer-container {
+		.footer-container {
 			text-align: center;
 			width: 100%;
 			background-color: #c68b59;
@@ -267,8 +267,6 @@
 
 		<div class="hero hero-right" style="background-image: url('images/fundo_luiz.png');"></div>
 	</div>
-
-
 	<div id="whatswidget-pre-wrapper" class="">
 		<div id="whatswidget-widget-wrapper" class="whatswidget-widget-wrapper" style="all:revert;">
 			<div id="whatswidget-conversation" class="whatswidget-conversation"
@@ -496,7 +494,7 @@
 	</div>
 	</div>
 	<div class="master_sobre">
-		<div class="sub_sobre" style="display: flex; align-items: flex-start;">
+		<div class="sub_sobre" style="margin: 20px 40px 20px 40px;">
 			<div class="text_sobre" style="margin-right: 20px;">
 				<h1>Psicólogo e Psicanalista: Compromisso com Direitos Humanos e Diversidade</h1>
 				<hr>
@@ -622,13 +620,34 @@
 	<script async src="//www.instagram.com/embed.js"></script>
 	<div class="footer-container">
 		<footer class="bg-body-tertiary text-center py-4">
-			<i class="fas fa-envelope"></i> psi.luizgustavosilva@gmail.com
+			<i class="fas fa-envelope"></i>
+			<span id="email" onclick="copyEmail()" style="cursor: pointer; text-decoration: underline;">
+				psi.luizgustavosilva@gmail.com
+			</span>
 		</footer>
-
 	</div>
-
 	<script async src="//www.instagram.com/embed.js"></script>
+	<script>
+		function copyEmail() {
+			// Seleciona o elemento que contém o e-mail
+			var emailText = document.getElementById("email").textContent;
 
+			// Cria um campo de texto temporário para copiar o e-mail
+			var tempInput = document.createElement("input");
+			tempInput.value = emailText;
+			document.body.appendChild(tempInput);
+
+			// Seleciona o conteúdo do campo de texto e copia
+			tempInput.select();
+			document.execCommand("copy");
+
+			// Remove o campo de texto temporário
+			document.body.removeChild(tempInput);
+
+			// Exibe uma mensagem de confirmação
+			alert("E-mail copiado!");
+		}
+	</script>
 	<div class="map-container">
 		<iframe
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.542222519967!2d-46.58717738911222!3d-23.584879262368172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5d26f5382145%3A0x81d6e6679d3d1c51!2sSubloca%C3%A7%C3%A3o%20de%20Sala%20-%20Metr%C3%B4%20Vila%20prudente!5e0!3m2!1spt-BR!2sbr!4v1718821020171!5m2!1spt-BR!2sbr"
